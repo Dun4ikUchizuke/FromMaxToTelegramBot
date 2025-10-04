@@ -1,0 +1,9 @@
+services:
+  telegram-bot:
+    container_name: MaxToTgBot_main
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /MaxToTgBot_main
+    command: python main.py
+    restart: always
