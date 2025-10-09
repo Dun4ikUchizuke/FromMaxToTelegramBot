@@ -13,8 +13,8 @@ greenApiInstID = getenv('idInstance')
 greenApiTokenInst = getenv('apiTokenInstance')
 
 async def GetMessages():
-    url = f"""https://3100.api.green-api.com/v3/waInstance{greenApiInstID}/lastIncomingMessages/{greenApiTokenInst}?"""
-    payload = {'minutes': '5'}
+    url = f"""https://3100.api.green-api.com/v3/waInstance{greenApiInstID}/lastIncomingMessages/{greenApiTokenInst}?minutes=1"""
+    payload = {}
     headers= {}
     response = requests.request("GET", url, headers=headers, data = payload)
     data = response.json()
@@ -45,3 +45,4 @@ async def GetMessages():
                     continue
                 case _:
                     continue
+    data = None
